@@ -89,14 +89,14 @@ merge_GR <- function(x){
 #' merge_level = "group_level")
 
 get_genomic_annotations <- function(data_table = NULL,
-                                    ref_gen = "hg38",
+                                    ref_gen = "mm10",
                                     tss_region = c(-1000, 1000),
                                     merge_level = "all"){
 
   ## check ref_gen
-  if(ref_gen == "hg38"){
+  if(ref_gen == "mm10"){
 
-    txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene
+    txdb <- TxDb.Mmusculus.UCSC.mm10.knownGene::TxDb.Mmusculus.UCSC.mm10.knownGene
   } else {
 
     txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene::TxDb.Hsapiens.UCSC.hg19.knownGene
@@ -147,7 +147,7 @@ get_genomic_annotations <- function(data_table = NULL,
 
     suppressMessages(all_bed_ap <- ChIPseeker::annotatePeak(peak = all_bed_gr,
                                                             tssRegion = tss_region,
-                                                            TxDb = txdb, annoDb = "org.Hs.eg.db",
+                                                            TxDb = txdb, annoDb = "org.Mm.eg.db",
                                                             verbose = FALSE))
 
     return_dat <- all_bed_ap@annoStat %>% as.data.frame() %>%
