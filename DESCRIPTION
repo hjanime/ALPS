@@ -23,6 +23,7 @@ Imports:
   Gviz,
   magrittr,
   org.Hs.eg.db,
+  org.Mm.eg.db,
   plyr,
   reshape2,
   rtracklayer,
@@ -31,7 +32,7 @@ Imports:
   tibble,
   tidyr,
   TxDb.Hsapiens.UCSC.hg19.knownGene,
-  TxDb.Hsapiens.UCSC.hg38.knownGene,
+  TxDb.Mmusculus.UCSC.mm10.knownGene,
   utils
 URL: https://github.com/itsvenu/ALPS
 BugReports: https://github.com/itsvenu/ALPS/issues
