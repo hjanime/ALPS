@@ -51,7 +51,7 @@ getChrStartEnd <- function(x){
 #' gene_range = gene_range, ref_gen = "hg38")
 
 plot_browser_tracks <- function(data_table=NULL, gene_range = NULL,
-                                ref_gen = "hg38", cex.axis = 0.5,
+                                ref_gen = "mm10", cex.axis = 0.5,
                                 cex.title = 0.8, ...){
 
   assertthat::assert_that(!is.null(data_table), msg = "Please provide `data_table`")
@@ -64,9 +64,9 @@ plot_browser_tracks <- function(data_table=NULL, gene_range = NULL,
   gene_range_split <- getChrStartEnd(x = gene_range)
 
   ## build genetrack
-  if(ref_gen == "hg38"){
+  if(ref_gen == "mm10"){
 
-    txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene
+    txdb <- TxDb.Mmusculus.UCSC.mm10.knownGene::TxDb.Mmusculus.UCSC.mm10.knownGene
 
   } else {
 
